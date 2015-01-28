@@ -44,5 +44,4 @@ class DisqusPlugin extends Herbie\Plugin
            'shortname' => $shortname
         ]);
     }
-
 }
