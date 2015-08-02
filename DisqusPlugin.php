@@ -40,7 +40,7 @@ class DisqusPlugin extends Herbie\Plugin
             'plugins.config.disqus.template',
             '@plugin/disqus/templates/disqus.twig'
         );
-        return $this->twig->render($template, [
+        return $this->render($template, [
            'shortname' => $shortname
         ]);
     }
