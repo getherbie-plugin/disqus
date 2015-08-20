@@ -1,0 +1,3 @@
+template: @plugin/disqus/templates/disqus.twig  # template path to twig template
+shortcode: true                                 # enable shortcode
+twig: false                                     # enable twig function

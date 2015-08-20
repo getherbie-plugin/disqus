@@ -4,6 +4,7 @@ Herbie Disqus Plugin
 `Disqus` ist ein [Herbie](http://github.com/getherbie/herbie) Plugin, mit dem du den gleichnamigen Service 
 [Disqus](http://www.disqus.com) in deine Website einbettest.
 
+
 ## Installation
 
 Das Plugin installierst du via Composer.
@@ -17,20 +18,38 @@ Danach aktivierst du das Plugin in der Konfigurationsdatei.
             - disqus
 
 
-Anwendung
----------
+## Konfiguration
 
-Nach der Installation steht dir die Twig-Funktion `disqus` zur Verfügung. Diese rufst du wie folgt auf:
+Unter *plugins.config.disqus* stehen dir die folgenden Optionen zur Verfügung:
+
+    template: @plugin/disqus/templates/disqus.twig      # template path to twig template                
+    shortcode: true                                     # enable shortcode
+    twig: false                                         # enable twig function
+
+
+## Anwendung
+
+Nach der Installation und Konfiguration stehen dir eine Twig-Funktion und ein Shortcode `disqus` zur Verfügung.
+
+Den Shortcode rufst du in deinen Inhaltsseiten wie folgt auf:
+
+    [[disqus getherbie]]
+    
+    oder
+    
+    [[disqus shortname="getherbie"]]
+    
+    
+Die Twig-Funktion rufst du in deinen Layoutdateien so auf:
 
     {{ disqus("getherbie") }}
 
 
-Parameter
----------
+## Parameter
 
 Name        | Beschreibung                          | Typ       | Default
 :---------- | :------------------------------------ | :-------- | :------
-shortname   | Der Disqus Shortname                  | string    |  
+shortname   | Der Disqus Shortname                  | string    |  *empty*
 
 
 ## Demo

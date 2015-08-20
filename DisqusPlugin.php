@@ -16,25 +16,43 @@ use Twig_SimpleFunction;
 
 class DisqusPlugin extends Herbie\Plugin
 {
+    /**
+     * @return array
+     */
+    public function getSubscribedEvents()
+    {
+        $events = [];
+        if ((bool)$this->config('plugins.config.disqus.twig', false)) {
+            $events[] = 'onTwigInitialized';
+        }
+        if ((bool)$this->config('plugins.config.disqus.shortcode', true)) {
+            $events[] = 'onShortcodeInitialized';
+        }
+        return $events;
+    }
 
     /**
-     * @var Twig_Environment
+     * @param $twig
      */
-    private $twig;
-
-    public function onTwigInitialized(Herbie\Event $event)
+    public function onTwigInitialized($twig)
     {
-        $this->twig = $event['twig'];
-        $this->twig->addFunction(
-            new Twig_SimpleFunction('disqus', [$this, 'disqus'], ['is_safe' => ['html']])
-        );
+        $simpleFunction = new Twig_SimpleFunction('disqus', [$this, 'disqusTwig'], ['is_safe' => ['html']]);
+        $twig->addFunction($simpleFunction);
+    }
+
+    /**
+     * @param $shortcode
+     */
+    public function onShortcodeInitialized($shortcode)
+    {
+        $shortcode->add('disqus', [$this, 'disqusShortcode']);
     }
 
     /**
      * @param string $shortname
      * @return string
      */
-    public function disqus($shortname)
+    public function disqusTwig($shortname)
     {
         $template = $this->config->get(
             'plugins.config.disqus.template',
@@ -44,4 +62,17 @@ class DisqusPlugin extends Herbie\Plugin
            'shortname' => $shortname
         ]);
     }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function disqusShortcode($options)
+    {
+        $options = $this->initOptions([
+            'shortname' => empty($options[0]) ? '' : $options[0],
+        ], $options);
+        return call_user_func_array([$this, 'disqusTwig'], $options);
+    }
+
 }
