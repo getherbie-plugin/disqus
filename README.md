@@ -33,11 +33,11 @@ Nach der Installation und Konfiguration stehen dir eine Twig-Funktion und ein Sh
 
 Den Shortcode rufst du in deinen Inhaltsseiten wie folgt auf:
 
-    [[disqus getherbie]]
+    [disqus getherbie]
     
     oder
     
-    [[disqus shortname="getherbie"]]
+    [disqus shortname="getherbie"]
     
     
 Die Twig-Funktion rufst du in deinen Layoutdateien so auf:
