@@ -22,9 +22,14 @@ Danach aktivierst du das Plugin in der Konfigurationsdatei.
 
 Unter *plugins.config.disqus* stehen dir die folgenden Optionen zur Verfügung:
 
-    template: @plugin/disqus/templates/disqus.twig      # template path to twig template                
-    shortcode: true                                     # enable shortcode
-    twig: false                                         # enable twig function
+    # template path to twig template
+    template: @plugin/disqus/templates/disqus.twig
+
+    # enable shortcode
+    shortcode: true
+
+    # enable twig function    
+    twig: false
 
 
 ## Anwendung
@@ -54,4 +59,4 @@ shortname   | Der Disqus Shortname                  | string    |  *empty*
 
 ## Demo
 
-<http://getherbie.org/blog/2014/05/09-responsive-youtube-videos>
+<http://www.getherbie.org/blog/2014/05/09-responsive-youtube-videos>
