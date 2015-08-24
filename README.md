@@ -1,5 +1,4 @@
-Herbie Disqus Plugin
-====================
+# Herbie Disqus Plugin
 
 `Disqus` ist ein [Herbie](http://github.com/getherbie/herbie) Plugin, mit dem du den gleichnamigen Service 
 [Disqus](http://www.disqus.com) in deine Website einbettest.
@@ -20,7 +19,7 @@ Danach aktivierst du das Plugin in der Konfigurationsdatei.
 
 ## Konfiguration
 
-Unter *plugins.config.disqus* stehen dir die folgenden Optionen zur Verfügung:
+Unter `plugins.config.disqus` stehen dir die folgenden Optionen zur Verfügung:
 
     # template path to twig template
     template: @plugin/disqus/templates/disqus.twig
