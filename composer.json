@@ -4,5 +4,8 @@
     "description": "Disqus Plugin for Herbie.",
     "keywords": ["herbie", "plugin", "disqus"],
     "type": "herbie-plugin",
-    "license": "BSD-3-Clause"
+    "license": "BSD-3-Clause",
+    "require": {
+        "getherbie/herbie": "^1.0.0"
+    }
 }
