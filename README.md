@@ -58,4 +58,4 @@ shortname   | Der Disqus Shortname                  | string    |  *empty*
 
 ## Demo
 
-<http://www.getherbie.org/blog/2014/05/09-responsive-youtube-videos>
+<https://www.getherbie.org/blog/2014/05/09-responsive-youtube-videos>
