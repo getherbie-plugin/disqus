@@ -1,3 +1,8 @@
+> [!WARNING]
+> **Deprecated.** Since Herbie 3.0, this is part of
+> [`getherbie/herbie`](https://github.com/getherbie/herbie) documentation. This plugin is no
+> longer maintained. Upgrade to Herbie 3 instead.
+
 # Herbie Disqus Plugin
 
 `Disqus` ist ein [Herbie](http://github.com/getherbie/herbie) Plugin, mit dem du den gleichnamigen Service 
